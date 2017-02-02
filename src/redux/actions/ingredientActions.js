@@ -5,9 +5,9 @@ export function addIngredient(ingredient) {
   };
 }
 
-export function removeIngredient(ingredient) {
+export function removeIngredient(ingredientIndex) {
   return {
     type: 'REMOVE_INGREDIENT',
-    payload: ingredient,
+    payload: ingredientIndex,
   };
 }

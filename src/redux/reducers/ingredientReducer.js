@@ -11,7 +11,11 @@ export default function reducer(state = initialState, action) {
         ingredients: state.ingredients.concat(action.payload) };
     }
     case 'REMOVE_INGREDIENT': {
-      return { ...state, numIngredients: state.numIngredients - 1 };
+      return { ...state,
+        numIngredients: state.numIngredients - 1,
+        ingredients: state.ingredients.slice(0, action.payload)
+          .concat(state.ingredients.slice(action.payload + 1)),
+      };
     }
     default:
       return initialState;
