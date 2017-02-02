@@ -5,10 +5,6 @@ import { connect } from 'react-redux';
 import * as ingredientActions from './redux/actions/ingredientActions';
 import './App.css';
 
-// @connect(store => {
-//   return ingredients: store.ingredients
-// })
-
 function mapStateToProps(state) {
   return { ingredients: state.ingredients };
 }
