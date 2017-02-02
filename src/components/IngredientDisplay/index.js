@@ -37,6 +37,7 @@ function mapDispatchToProps(dispatch) {
 
 IngredientDisplay.propTypes = {
   ingredients: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+  actions: React.PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(IngredientDisplay);
