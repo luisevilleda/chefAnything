@@ -36,4 +36,8 @@ function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(ingredientActions, dispatch) };
 }
 
+IngredientInput.propTypes = {
+  actions: React.PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(IngredientInput);
