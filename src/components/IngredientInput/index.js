@@ -15,14 +15,23 @@ const handleInputChange = (e) => {
 const handleButtonClick = (actions) => {
   actions.addIngredient(userInput);
   userInput = '';
+  document.getElementById('ingredientInput').value = userInput;
 };
 
-const IngredientInput = (props) => (
+const handleKeyPress = (e, actions) => {
+  if (e.key === 'Enter') {
+    handleButtonClick(actions);
+  }
+};
+
+const IngredientInput = props => (
   <div className="inputField">
     <input
       name="ingredient"
+      id="ingredientInput"
       placeholder={placeholderText}
       onChange={e => handleInputChange(e)}
+      onKeyPress={e => handleKeyPress(e, props.actions)}
     />
     <button onClick={() => handleButtonClick(props.actions)}>Add Ingredient!</button>
   </div>

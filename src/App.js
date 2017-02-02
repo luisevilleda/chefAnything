@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import * as ingredientActions from './redux/actions/ingredientActions';
 import IngredientInput from './components/IngredientInput';
+import IngredientDisplay from './components/IngredientDisplay';
+
 import './App.css';
 
 function mapStateToProps(state) {
@@ -19,6 +21,7 @@ const App = (props) => {
     <div>
       <p>Welcome to chefAnything!</p>
       <IngredientInput />
+      <IngredientDisplay />
     </div>
   );
 };
