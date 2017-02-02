@@ -1,5 +1,6 @@
 ## About
 React-Redux application for finding out what food you can make with ingredients you have on hand!
+Visit my [website](http://luisevilleda.com).
 
 ## Setup
 - Clone the repo
@@ -11,5 +12,5 @@ React-Redux application for finding out what food you can make with ingredients 
 - Create a config.js file with your new key
 - Enjoy!
 
-
+g
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
