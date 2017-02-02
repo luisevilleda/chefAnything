@@ -5,20 +5,20 @@ import { connect } from 'react-redux';
 import * as recipeActions from '../../redux/actions/recipeActions';
 
 
-const handleRecipeFetch = actions => actions.fetchRecipes(['apple', 'butter']);
+const handleRecipeFetch = (actions, ingredients) => actions.fetchRecipes(ingredients);
 
-const mappedRecipes = recipes => recipes.map(recipe => {
-  return (
-    <li>
-      <span>{recipe.title}</span>
-      <img className="recipeImage" src={recipe.image} />
-    </li>
-  );
-});
+const mappedRecipes = recipes => recipes.map(recipe => (
+  <li key={recipe.title}>
+    <span>{recipe.title}</span>
+    <img alt={recipe.title} className="recipeImage" src={recipe.image} />
+  </li>
+));
 
 const RecipeDisplay = props => (
   <div className="recipeDisplay">
-    <button onClick={() => handleRecipeFetch(props.actions)}>What can I cook?</button>
+    <button onClick={() => handleRecipeFetch(props.actions, props.ingredients.ingredients)}>
+      What can I cook?
+    </button>
     <ul>
       {mappedRecipes(props.recipes.recipes)}
     </ul>
@@ -26,7 +26,7 @@ const RecipeDisplay = props => (
 );
 
 function mapStateToProps(state) {
-  return { recipes: state.recipes };
+  return { recipes: state.recipes, ingredients: state.ingredients };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -36,6 +36,7 @@ function mapDispatchToProps(dispatch) {
 RecipeDisplay.propTypes = {
   recipes: React.PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   actions: React.PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  ingredients: React.PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeDisplay);
