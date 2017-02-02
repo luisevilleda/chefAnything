@@ -1,15 +1,23 @@
 const initialState = {
-  numRecipes: 0,
-  Recipes: [],
+  recipes: [],
+  fetchRecipesCalled: false,
+  fetchRecipesSuccess: null,
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case 'ADD_RECIPES': {
-      return { ...state, numRecipes: state.numRecipes + 1 };
+    case 'FETCH_RECIPES_FULFILLED': {
+      return { ...state,
+        recipes: [].concat(action.payload),
+        fetchRecipesCalled: true,
+        fetchRecipesSuccess: true,
+      };
     }
-    case 'REMOVE_INGREDIENT': {
-      return { ...state, numRecipes: state.numRecipes - 1 };
+    case 'FETCH_RECIPES_REJECTED': {
+      return { ...state,
+        fetchRecipesCalled: true,
+        fetchRecipesSuccess: false,
+      };
     }
     default:
       return initialState;

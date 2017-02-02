@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as ingredientActions from './redux/actions/ingredientActions';
 import IngredientInput from './components/IngredientInput';
 import IngredientDisplay from './components/IngredientDisplay';
+import RecipeDisplay from './components/RecipeDisplay';
 
 import './App.css';
 
@@ -22,6 +23,7 @@ const App = (props) => {
       <p>Welcome to chefAnything!</p>
       <IngredientInput />
       <IngredientDisplay />
+      <RecipeDisplay />
     </div>
   );
 };
