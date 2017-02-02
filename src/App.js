@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as ingredientActions from './redux/actions/ingredientActions';
+import IngredientInput from './components/IngredientInput';
 import './App.css';
 
 function mapStateToProps(state) {
@@ -17,6 +18,7 @@ const App = (props) => {
   return (
     <div>
       <p>Welcome to chefAnything!</p>
+      <IngredientInput />
     </div>
   );
 };
