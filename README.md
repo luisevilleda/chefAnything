@@ -1,5 +1,6 @@
 ## About
 React-Redux application for finding out what food you can make with ingredients you have on hand!
+
 Visit my [website](http://luisevilleda.com).
 
 ## Setup
