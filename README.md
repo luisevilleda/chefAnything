@@ -12,5 +12,4 @@ Visit my [website](http://luisevilleda.com).
 - Create a config.js file with your new key
 - Enjoy!
 
-g
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
